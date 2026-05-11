@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import sys
+import os
 
-USERNAME = sys.argv[1] if len(sys.argv) > 1 else "standard_user"
-PASSWORD = sys.argv[2] if len(sys.argv) > 2 else "secret_sauce"
+USERNAME = os.getenv("USERNAME", "standard_user")
+PASSWORD = os.getenv("PASSWORD", "secret_sauce")
 
 class TestSauceDemo(unittest.TestCase):
 
